@@ -1,0 +1,656 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		484B91B21A66F1010008AB28 /* SCCPuzzleSolver.m in Sources */ = {isa = PBXBuildFile; fileRef = 484B91B11A66F1010008AB28 /* SCCPuzzleSolver.m */; };
+		484B91B51A66F1950008AB28 /* SCCPuzzleMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 484B91B41A66F1950008AB28 /* SCCPuzzleMapper.m */; };
+		484B91B81A6710100008AB28 /* SCCSpaceButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 484B91B71A6710100008AB28 /* SCCSpaceButton.m */; };
+		484B91BB1A6722470008AB28 /* SCCPuzzleOptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 484B91BA1A6722470008AB28 /* SCCPuzzleOptionsViewController.m */; };
+		4855B6FF1A6480730001C340 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4855B6FE1A6480730001C340 /* main.m */; };
+		4855B7021A6480730001C340 /* SCCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4855B7011A6480730001C340 /* SCCAppDelegate.m */; };
+		4855B7081A6480730001C340 /* SCCPuzzleInteractionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4855B7071A6480730001C340 /* SCCPuzzleInteractionViewController.m */; };
+		4855B70B1A6480730001C340 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4855B7091A6480730001C340 /* Main.storyboard */; };
+		4855B70D1A6480730001C340 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4855B70C1A6480730001C340 /* Images.xcassets */; };
+		4855B7101A6480730001C340 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4855B70E1A6480730001C340 /* LaunchScreen.xib */; };
+		4855B71C1A6480730001C340 /* SanoCodingChallengeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4855B71B1A6480730001C340 /* SanoCodingChallengeTests.m */; };
+		4855B7291A6480CB0001C340 /* SCCPuzzle.m in Sources */ = {isa = PBXBuildFile; fileRef = 4855B7281A6480CB0001C340 /* SCCPuzzle.m */; };
+		4855B72C1A6480DD0001C340 /* SCCGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 4855B72B1A6480DD0001C340 /* SCCGroup.m */; };
+		4855B72F1A6480E90001C340 /* SCCSquare.m in Sources */ = {isa = PBXBuildFile; fileRef = 4855B72E1A6480E90001C340 /* SCCSquare.m */; };
+		4855B7321A648D880001C340 /* SCCCoordinate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4855B7311A648D880001C340 /* SCCCoordinate.m */; };
+		4855B7351A6613300001C340 /* SCCPuzzleGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4855B7341A6613300001C340 /* SCCPuzzleGenerator.m */; };
+		4855B7381A6616B90001C340 /* NSMutableArray+SCCShuffling.m in Sources */ = {isa = PBXBuildFile; fileRef = 4855B7371A6616B90001C340 /* NSMutableArray+SCCShuffling.m */; };
+		4855B73B1A6632A90001C340 /* NSIndexSet+Operations.m in Sources */ = {isa = PBXBuildFile; fileRef = 4855B73A1A6632A90001C340 /* NSIndexSet+Operations.m */; };
+		4855B7481A6644550001C340 /* SCCGroupView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4855B7471A6644550001C340 /* SCCGroupView.m */; };
+		4855B74B1A6644A60001C340 /* SCCBoardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4855B74A1A6644A60001C340 /* SCCBoardView.m */; };
+		4855B74E1A6647BC0001C340 /* SCCPuzzleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4855B74D1A6647BC0001C340 /* SCCPuzzleView.m */; };
+		48F168891A673D2200267CA3 /* SCCPuzzleArchiver.m in Sources */ = {isa = PBXBuildFile; fileRef = 48F168881A673D2200267CA3 /* SCCPuzzleArchiver.m */; };
+		48F1688C1A673FCF00267CA3 /* SCCArchiverHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 48F1688B1A673FCF00267CA3 /* SCCArchiverHelper.m */; };
+		48F1688E1A675AFA00267CA3 /* Documentation.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 48F1688D1A675AFA00267CA3 /* Documentation.rtf */; };
+		FC5A570B4A318AC92252A920 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B9D2F49822430FC02849E710 /* libPods.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4855B7161A6480730001C340 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4855B6F11A6480730001C340 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4855B6F81A6480730001C340;
+			remoteInfo = SanoCodingChallenge;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		484B91B01A66F1010008AB28 /* SCCPuzzleSolver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCCPuzzleSolver.h; sourceTree = "<group>"; };
+		484B91B11A66F1010008AB28 /* SCCPuzzleSolver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCCPuzzleSolver.m; sourceTree = "<group>"; };
+		484B91B31A66F1950008AB28 /* SCCPuzzleMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCCPuzzleMapper.h; sourceTree = "<group>"; };
+		484B91B41A66F1950008AB28 /* SCCPuzzleMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCCPuzzleMapper.m; sourceTree = "<group>"; };
+		484B91B61A6710100008AB28 /* SCCSpaceButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCCSpaceButton.h; sourceTree = "<group>"; };
+		484B91B71A6710100008AB28 /* SCCSpaceButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCCSpaceButton.m; sourceTree = "<group>"; };
+		484B91B91A6722470008AB28 /* SCCPuzzleOptionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCCPuzzleOptionsViewController.h; sourceTree = "<group>"; };
+		484B91BA1A6722470008AB28 /* SCCPuzzleOptionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCCPuzzleOptionsViewController.m; sourceTree = "<group>"; };
+		4855B6F91A6480730001C340 /* SanoCodingChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SanoCodingChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4855B6FD1A6480730001C340 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4855B6FE1A6480730001C340 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		4855B7001A6480730001C340 /* SCCAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCCAppDelegate.h; sourceTree = "<group>"; };
+		4855B7011A6480730001C340 /* SCCAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCCAppDelegate.m; sourceTree = "<group>"; };
+		4855B7061A6480730001C340 /* SCCPuzzleInteractionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SCCPuzzleInteractionViewController.h; path = SanoCodingChallenge/SCCPuzzleInteractionViewController.h; sourceTree = "<group>"; };
+		4855B7071A6480730001C340 /* SCCPuzzleInteractionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = SCCPuzzleInteractionViewController.m; path = SanoCodingChallenge/SCCPuzzleInteractionViewController.m; sourceTree = "<group>"; };
+		4855B70A1A6480730001C340 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4855B70C1A6480730001C340 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		4855B70F1A6480730001C340 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		4855B7151A6480730001C340 /* SanoCodingChallengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SanoCodingChallengeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4855B71A1A6480730001C340 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4855B71B1A6480730001C340 /* SanoCodingChallengeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SanoCodingChallengeTests.m; sourceTree = "<group>"; };
+		4855B7271A6480CB0001C340 /* SCCPuzzle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCCPuzzle.h; sourceTree = "<group>"; };
+		4855B7281A6480CB0001C340 /* SCCPuzzle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCCPuzzle.m; sourceTree = "<group>"; };
+		4855B72A1A6480DD0001C340 /* SCCGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCCGroup.h; sourceTree = "<group>"; };
+		4855B72B1A6480DD0001C340 /* SCCGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCCGroup.m; sourceTree = "<group>"; };
+		4855B72D1A6480E90001C340 /* SCCSquare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCCSquare.h; sourceTree = "<group>"; };
+		4855B72E1A6480E90001C340 /* SCCSquare.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCCSquare.m; sourceTree = "<group>"; };
+		4855B7301A648D880001C340 /* SCCCoordinate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCCCoordinate.h; sourceTree = "<group>"; };
+		4855B7311A648D880001C340 /* SCCCoordinate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCCCoordinate.m; sourceTree = "<group>"; };
+		4855B7331A6613300001C340 /* SCCPuzzleGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCCPuzzleGenerator.h; sourceTree = "<group>"; };
+		4855B7341A6613300001C340 /* SCCPuzzleGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCCPuzzleGenerator.m; sourceTree = "<group>"; };
+		4855B7361A6616B90001C340 /* NSMutableArray+SCCShuffling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+SCCShuffling.h"; sourceTree = "<group>"; };
+		4855B7371A6616B90001C340 /* NSMutableArray+SCCShuffling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+SCCShuffling.m"; sourceTree = "<group>"; };
+		4855B7391A6632A90001C340 /* NSIndexSet+Operations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSIndexSet+Operations.h"; sourceTree = "<group>"; };
+		4855B73A1A6632A90001C340 /* NSIndexSet+Operations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSIndexSet+Operations.m"; sourceTree = "<group>"; };
+		4855B7461A6644550001C340 /* SCCGroupView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCCGroupView.h; sourceTree = "<group>"; };
+		4855B7471A6644550001C340 /* SCCGroupView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCCGroupView.m; sourceTree = "<group>"; };
+		4855B7491A6644A60001C340 /* SCCBoardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCCBoardView.h; sourceTree = "<group>"; };
+		4855B74A1A6644A60001C340 /* SCCBoardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCCBoardView.m; sourceTree = "<group>"; };
+		4855B74C1A6647BC0001C340 /* SCCPuzzleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCCPuzzleView.h; sourceTree = "<group>"; };
+		4855B74D1A6647BC0001C340 /* SCCPuzzleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCCPuzzleView.m; sourceTree = "<group>"; };
+		48F168871A673D2200267CA3 /* SCCPuzzleArchiver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCCPuzzleArchiver.h; sourceTree = "<group>"; };
+		48F168881A673D2200267CA3 /* SCCPuzzleArchiver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCCPuzzleArchiver.m; sourceTree = "<group>"; };
+		48F1688A1A673FCF00267CA3 /* SCCArchiverHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCCArchiverHelper.h; sourceTree = "<group>"; };
+		48F1688B1A673FCF00267CA3 /* SCCArchiverHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCCArchiverHelper.m; sourceTree = "<group>"; };
+		48F1688D1A675AFA00267CA3 /* Documentation.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Documentation.rtf; sourceTree = "<group>"; };
+		6612DE0763FFDDE2E1844DDF /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		B9D2F49822430FC02849E710 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		F126E66BBD7C7B73EEDBD910 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4855B6F61A6480730001C340 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FC5A570B4A318AC92252A920 /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4855B7121A6480730001C340 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		19DD454FB6855988A3C12E77 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B9D2F49822430FC02849E710 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4855B6F01A6480730001C340 = {
+			isa = PBXGroup;
+			children = (
+				48F1688D1A675AFA00267CA3 /* Documentation.rtf */,
+				4855B6FB1A6480730001C340 /* SanoCodingChallenge */,
+				4855B7181A6480730001C340 /* SanoCodingChallengeTests */,
+				4855B6FA1A6480730001C340 /* Products */,
+				7D31A8796176EF8E07266CAE /* Pods */,
+				19DD454FB6855988A3C12E77 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		4855B6FA1A6480730001C340 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4855B6F91A6480730001C340 /* SanoCodingChallenge.app */,
+				4855B7151A6480730001C340 /* SanoCodingChallengeTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4855B6FB1A6480730001C340 /* SanoCodingChallenge */ = {
+			isa = PBXGroup;
+			children = (
+				4855B73D1A66404F0001C340 /* Models */,
+				4855B74F1A664AE90001C340 /* Views */,
+				4855B7421A6640AC0001C340 /* ViewControllers */,
+				4855B73E1A6640540001C340 /* Logic */,
+				4855B73C1A6632AE0001C340 /* Categories */,
+				4855B7001A6480730001C340 /* SCCAppDelegate.h */,
+				4855B7011A6480730001C340 /* SCCAppDelegate.m */,
+				4855B7091A6480730001C340 /* Main.storyboard */,
+				4855B70C1A6480730001C340 /* Images.xcassets */,
+				4855B70E1A6480730001C340 /* LaunchScreen.xib */,
+				4855B6FC1A6480730001C340 /* Supporting Files */,
+			);
+			path = SanoCodingChallenge;
+			sourceTree = "<group>";
+		};
+		4855B6FC1A6480730001C340 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4855B6FD1A6480730001C340 /* Info.plist */,
+				4855B6FE1A6480730001C340 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4855B7181A6480730001C340 /* SanoCodingChallengeTests */ = {
+			isa = PBXGroup;
+			children = (
+				4855B71B1A6480730001C340 /* SanoCodingChallengeTests.m */,
+				4855B7191A6480730001C340 /* Supporting Files */,
+			);
+			path = SanoCodingChallengeTests;
+			sourceTree = "<group>";
+		};
+		4855B7191A6480730001C340 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4855B71A1A6480730001C340 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4855B73C1A6632AE0001C340 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				4855B7391A6632A90001C340 /* NSIndexSet+Operations.h */,
+				4855B73A1A6632A90001C340 /* NSIndexSet+Operations.m */,
+				4855B7361A6616B90001C340 /* NSMutableArray+SCCShuffling.h */,
+				4855B7371A6616B90001C340 /* NSMutableArray+SCCShuffling.m */,
+			);
+			name = Categories;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		4855B73D1A66404F0001C340 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4855B7271A6480CB0001C340 /* SCCPuzzle.h */,
+				4855B7281A6480CB0001C340 /* SCCPuzzle.m */,
+				4855B72A1A6480DD0001C340 /* SCCGroup.h */,
+				4855B72B1A6480DD0001C340 /* SCCGroup.m */,
+				4855B72D1A6480E90001C340 /* SCCSquare.h */,
+				4855B72E1A6480E90001C340 /* SCCSquare.m */,
+				4855B7301A648D880001C340 /* SCCCoordinate.h */,
+				4855B7311A648D880001C340 /* SCCCoordinate.m */,
+			);
+			name = Models;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		4855B73E1A6640540001C340 /* Logic */ = {
+			isa = PBXGroup;
+			children = (
+				4855B7331A6613300001C340 /* SCCPuzzleGenerator.h */,
+				4855B7341A6613300001C340 /* SCCPuzzleGenerator.m */,
+				484B91B01A66F1010008AB28 /* SCCPuzzleSolver.h */,
+				484B91B11A66F1010008AB28 /* SCCPuzzleSolver.m */,
+				484B91B31A66F1950008AB28 /* SCCPuzzleMapper.h */,
+				484B91B41A66F1950008AB28 /* SCCPuzzleMapper.m */,
+				48F168901A67928700267CA3 /* Archiving */,
+			);
+			name = Logic;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		4855B7421A6640AC0001C340 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				4855B7061A6480730001C340 /* SCCPuzzleInteractionViewController.h */,
+				4855B7071A6480730001C340 /* SCCPuzzleInteractionViewController.m */,
+				484B91B91A6722470008AB28 /* SCCPuzzleOptionsViewController.h */,
+				484B91BA1A6722470008AB28 /* SCCPuzzleOptionsViewController.m */,
+			);
+			name = ViewControllers;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		4855B74F1A664AE90001C340 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				48F1688F1A67927300267CA3 /* BoardViews */,
+				484B91B61A6710100008AB28 /* SCCSpaceButton.h */,
+				484B91B71A6710100008AB28 /* SCCSpaceButton.m */,
+			);
+			name = Views;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		48F1688F1A67927300267CA3 /* BoardViews */ = {
+			isa = PBXGroup;
+			children = (
+				4855B7491A6644A60001C340 /* SCCBoardView.h */,
+				4855B74A1A6644A60001C340 /* SCCBoardView.m */,
+				4855B7461A6644550001C340 /* SCCGroupView.h */,
+				4855B7471A6644550001C340 /* SCCGroupView.m */,
+				4855B74C1A6647BC0001C340 /* SCCPuzzleView.h */,
+				4855B74D1A6647BC0001C340 /* SCCPuzzleView.m */,
+			);
+			name = BoardViews;
+			sourceTree = "<group>";
+		};
+		48F168901A67928700267CA3 /* Archiving */ = {
+			isa = PBXGroup;
+			children = (
+				48F168871A673D2200267CA3 /* SCCPuzzleArchiver.h */,
+				48F168881A673D2200267CA3 /* SCCPuzzleArchiver.m */,
+				48F1688A1A673FCF00267CA3 /* SCCArchiverHelper.h */,
+				48F1688B1A673FCF00267CA3 /* SCCArchiverHelper.m */,
+			);
+			name = Archiving;
+			sourceTree = "<group>";
+		};
+		7D31A8796176EF8E07266CAE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F126E66BBD7C7B73EEDBD910 /* Pods.debug.xcconfig */,
+				6612DE0763FFDDE2E1844DDF /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4855B6F81A6480730001C340 /* SanoCodingChallenge */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4855B71F1A6480730001C340 /* Build configuration list for PBXNativeTarget "SanoCodingChallenge" */;
+			buildPhases = (
+				4149E05697DDB32C7AC7C265 /* Check Pods Manifest.lock */,
+				4855B6F51A6480730001C340 /* Sources */,
+				4855B6F61A6480730001C340 /* Frameworks */,
+				4855B6F71A6480730001C340 /* Resources */,
+				48E0B516C4CFD9013C98B7BE /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SanoCodingChallenge;
+			productName = SanoCodingChallenge;
+			productReference = 4855B6F91A6480730001C340 /* SanoCodingChallenge.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4855B7141A6480730001C340 /* SanoCodingChallengeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4855B7221A6480730001C340 /* Build configuration list for PBXNativeTarget "SanoCodingChallengeTests" */;
+			buildPhases = (
+				4855B7111A6480730001C340 /* Sources */,
+				4855B7121A6480730001C340 /* Frameworks */,
+				4855B7131A6480730001C340 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4855B7171A6480730001C340 /* PBXTargetDependency */,
+			);
+			name = SanoCodingChallengeTests;
+			productName = SanoCodingChallengeTests;
+			productReference = 4855B7151A6480730001C340 /* SanoCodingChallengeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4855B6F11A6480730001C340 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = SCC;
+				LastUpgradeCheck = 0620;
+				ORGANIZATIONNAME = Feef;
+				TargetAttributes = {
+					4855B6F81A6480730001C340 = {
+						CreatedOnToolsVersion = 6.2;
+					};
+					4855B7141A6480730001C340 = {
+						CreatedOnToolsVersion = 6.2;
+						TestTargetID = 4855B6F81A6480730001C340;
+					};
+				};
+			};
+			buildConfigurationList = 4855B6F41A6480730001C340 /* Build configuration list for PBXProject "SanoCodingChallenge" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4855B6F01A6480730001C340;
+			productRefGroup = 4855B6FA1A6480730001C340 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4855B6F81A6480730001C340 /* SanoCodingChallenge */,
+				4855B7141A6480730001C340 /* SanoCodingChallengeTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4855B6F71A6480730001C340 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4855B70B1A6480730001C340 /* Main.storyboard in Resources */,
+				48F1688E1A675AFA00267CA3 /* Documentation.rtf in Resources */,
+				4855B7101A6480730001C340 /* LaunchScreen.xib in Resources */,
+				4855B70D1A6480730001C340 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4855B7131A6480730001C340 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4149E05697DDB32C7AC7C265 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		48E0B516C4CFD9013C98B7BE /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4855B6F51A6480730001C340 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4855B7021A6480730001C340 /* SCCAppDelegate.m in Sources */,
+				484B91B21A66F1010008AB28 /* SCCPuzzleSolver.m in Sources */,
+				4855B72C1A6480DD0001C340 /* SCCGroup.m in Sources */,
+				4855B7291A6480CB0001C340 /* SCCPuzzle.m in Sources */,
+				484B91B51A66F1950008AB28 /* SCCPuzzleMapper.m in Sources */,
+				4855B7321A648D880001C340 /* SCCCoordinate.m in Sources */,
+				4855B7351A6613300001C340 /* SCCPuzzleGenerator.m in Sources */,
+				484B91B81A6710100008AB28 /* SCCSpaceButton.m in Sources */,
+				4855B74B1A6644A60001C340 /* SCCBoardView.m in Sources */,
+				4855B6FF1A6480730001C340 /* main.m in Sources */,
+				4855B7381A6616B90001C340 /* NSMutableArray+SCCShuffling.m in Sources */,
+				48F1688C1A673FCF00267CA3 /* SCCArchiverHelper.m in Sources */,
+				4855B72F1A6480E90001C340 /* SCCSquare.m in Sources */,
+				484B91BB1A6722470008AB28 /* SCCPuzzleOptionsViewController.m in Sources */,
+				4855B73B1A6632A90001C340 /* NSIndexSet+Operations.m in Sources */,
+				4855B7081A6480730001C340 /* SCCPuzzleInteractionViewController.m in Sources */,
+				4855B7481A6644550001C340 /* SCCGroupView.m in Sources */,
+				4855B74E1A6647BC0001C340 /* SCCPuzzleView.m in Sources */,
+				48F168891A673D2200267CA3 /* SCCPuzzleArchiver.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4855B7111A6480730001C340 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4855B71C1A6480730001C340 /* SanoCodingChallengeTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4855B7171A6480730001C340 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4855B6F81A6480730001C340 /* SanoCodingChallenge */;
+			targetProxy = 4855B7161A6480730001C340 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		4855B7091A6480730001C340 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4855B70A1A6480730001C340 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		4855B70E1A6480730001C340 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4855B70F1A6480730001C340 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4855B71D1A6480730001C340 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4855B71E1A6480730001C340 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4855B7201A6480730001C340 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F126E66BBD7C7B73EEDBD910 /* Pods.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = SanoCodingChallenge/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		4855B7211A6480730001C340 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6612DE0763FFDDE2E1844DDF /* Pods.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = SanoCodingChallenge/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		4855B7231A6480730001C340 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = SanoCodingChallengeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SanoCodingChallenge.app/SanoCodingChallenge";
+			};
+			name = Debug;
+		};
+		4855B7241A6480730001C340 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = SanoCodingChallengeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SanoCodingChallenge.app/SanoCodingChallenge";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4855B6F41A6480730001C340 /* Build configuration list for PBXProject "SanoCodingChallenge" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4855B71D1A6480730001C340 /* Debug */,
+				4855B71E1A6480730001C340 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4855B71F1A6480730001C340 /* Build configuration list for PBXNativeTarget "SanoCodingChallenge" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4855B7201A6480730001C340 /* Debug */,
+				4855B7211A6480730001C340 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4855B7221A6480730001C340 /* Build configuration list for PBXNativeTarget "SanoCodingChallengeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4855B7231A6480730001C340 /* Debug */,
+				4855B7241A6480730001C340 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4855B6F11A6480730001C340 /* Project object */;
+}

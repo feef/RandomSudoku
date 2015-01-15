@@ -1,0 +1,68 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1343\cocoasubrtf160
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+\margl1440\margr1440\vieww9000\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\f0\fs24 \cf0 I'm a little light on documentation in my code as far as design choices. They don't naturally fall into my code as little notes on design feel rather odd spread out across disparate classes; I feel, rather, that they are something that are well explained in essay format in one contiguous document. Below is just that; a document outlining my design choices, providing a walkthrough of my thoughts and process.\
+\
+I approached this project first by thinking about the end result. I wanted to create a system that would create a random sudoku puzzle and present the unsolved puzzle to the user such that it could be filled in and checked by my system. Additionally, I needed a way to specify the difficulty of the puzzle in the form of, I figured, a simple menu.\
+\
+On the algorithmic side, it appeared the biggest hurdle to overcome was the generation of the puzzle.\
+On the UI side, it appeared the biggest hurdle was creating a "board" that was easy to interact with and looked good on all devices.\
+Due in part to my familiarity with creating UI, the puzzle generation seemed like a much harder problem, so I went after that first.\
+\
+I did a bit of research, looking up how people generally create sudoku puzzles (on paper, not in code) and found the simplest means to be filling in the board one number at a time, creating a fully solved puzzle, and then removing numbers until a particular difficulty level was met. This process seemed straightforward enough, but it had a rather horrid wrinkle; one could place numbers such that later numbers could not be placed in valid positions in the puzzle.\
+\
+Recognizing this issue at the onset, I set out to create an algorithm that could, in a sense, try a path and backtrack / retry as needed; this screamed of recursiveness.\
+\
+Additionally, the process seemed broken up, conceptually, into 2 nested recursive functions:\
+\
+1) a function that would recursively attempt to place a number at a random location within a group without creating an invalid puzzle state (more than 1 of the same number in any row / column / group), returning the filled squares or nil. By calling recursively, an "undo" of a prior number placement could be achieved by selecting the next number in the (randomized) array of open spots, confirming a valid state, and then retrying the next number in the sequence. A depth-first approach.\
+\
+2) a function that would recursively iterate through each number (1-9), calling function 1, returning true or false depending on whether or not all groups could be filled under the current constraints. By calling recursively, an "undo" can be achieved by undoing the last number then retrying function 1 with a new placement for each previously placed number until a viable solution is reached.\
+\
+I began the implement this system, satisfied that it was the ideal way to generate a puzzle, and began creating models that would represent different parts of the system. I found a need for a "Space"* (representing a single square on the board), "Group" (representing a group of 9 spaces), and "Puzzle" (representing the whole board, a collection of 9 groups) models to properly explain the game. Additionally, I quickly realized a "Coordinate" model would be necessary to describe the location of spaces and groups on the board.\
+\
+With the models created, I set out to implement the "ideal" generation system. However, this system, even after I had conceptually mapped it out, was challenging to implement correctly, so I began by implementing a simpler version; one that simply retries a whole group if the next group cannot place it's number in all of the groups.\
+\
+Working with this system, which successfully created a puzzle in an acceptably fast manner, I moved onto functions that removed spaces from the groups, creating a puzzle from a solved board. Randomly selecting coordinates from the board was trivial, as was implementing the nicety of a symmetric board (such that the removed coordinates are reflected across the origin) which seems to be a common practice in sudoku puzzles. Having now created a system that could generate a solved puzzle and a puzzle with missing numbers (and, by extension, puzzles of different difficulties), I now set out to make sure my restricted puzzles were solvable.\
+\
+Fortunately, the system for solving a sudoku puzzle is very straightforward:\
+\
+1) find a group that has undefined spaces\
+2) find all numbers missing in the group\
+3) find all numbers missing in the row of a particular undefined space in the group\
+4) find all numbers missing in the column of a particular undefined space in the group\
+5) take the union of all these "possible" values**\
+5a) if there is only a single "possible" value, then the space is solved. Set the space to that value and try to solve ALL other undefined spaces (including those that have been tried before) in the group.\
+5b) if there is more than a single "possible" value, then this space is not yet solvable, try to solve the other undefined spaces that have not yet been attempted\
+6) if we go through all of the groups without any solving any spaces, then the puzzle is unsolvable\
+\
+I approached "undoing" too many removals by, instead of manipulating the original "solved" puzzle, manipulating a copy of the "solved" puzzle. Iterating down to a "solvable" puzzle meant removing complimentary pairs of coordinates from the "removal" list until the puzzle was solvable even after a set of coordinates was removed.\
+\
+At this point I set to tracking down any logical errors in the generation of puzzles. For the most part, things worked properly, but a couple sloppy spots where x and y coordinates were swapped caused some interesting results. I initially noticed them when I my printed out puzzles would come out as all 0s or, in the case when my printing function was faulty, would repeat rows. These issues were easy to track down but were dealt with before moving forward into code restructuring.\
+\
+To this point, the functions for puzzle generation and solving all resided in a single class, but a clear set of methods emerged for each operation and so they were split into separate classes. Additionally, splitting them revealed a shared reliance on some coordinate mapping methods which were also split out into a separate class. With the basic operations done and cleaned up, the next step was the UI.\
+\
+I had initially planned on using a UICollectionView for the board, but quickly realized the unnecessary overhead of the system. This was not a dynamic system, in that there were not views that would be reused and there was no need to abstract the connection between the view and the underlying models, so I opted for a simple view full of buttons.\
+\
+I realized I would be dealing with 2 kinds of views, one for groups and another for the entire board, but both would be breaking up their bounds into equal areas and adding subviews at the same locations (one flush along the left edge, another in the center, and a last one flush with the right). Realizing this shared functionality, I created a superclass that would split up it's bounds into equal parts and add subviews of a given class inside. These views, along with a simple button class that used KVO to sync it's content to the "Space" object it represented, were enough to represent the whole board. Best of all, using views that were drawn programmatically allowed for very simple resizing.\
+\
+By using autolayout in the storyboard, I placed constraints such that the board would stay square, stay in the center of the view, and always stay at least 20 pixels from any edge. Any time the board changed it's bounds due to the constraints the puzzle and group views would respond by redrawing their contents.\
+\
+For the number input system, I went with a very simple toolbar implementation instead of allowing the keyboard to display. Even the number keyboard is far taller and has many more options than necessary for this application. Pressing on items inside the toolbar changes the "Space" objects that is being observed by each "SpaceButton", allowing for an immediate UI change without ever having to abstract the button from the model it is representing.\
+\
+Finally, I created a simple menu for selecting puzzle difficulty, 3 UIButtons and a UILabel inside a view controller, and had it appear from a button press on the "board interaction" screen. On generating "hard" puzzles and seeing the sizable UI wait incurred by performing generation on the main thread, I modified puzzle generation and checking so that it was performed on a background thread and passed the generated puzzle to a callback block. This allowed me to implement some more user-friendly UI (in the form of a progress HUD) while the puzzle was being generated and it was at this point I added the SVProgressHUD cocoapod to the project.\
+\
+With the UI complete, I moved onto saving puzzle progress. Certainly, backgrounding would not wipe the puzzle, but it would also be nice if quitting the app didn't lose progress. I have used, in very limited capacity, core data for storage, but the complexity associated with it seemed completely unnecessary for such a simple task, so I instead turned to storing the puzzle object in NSUserDefaults. Modifying the models to be NSCoding compliant was trivial and storing on app backgrounding and app close is enough to ensure puzzle progress is never lost.\
+\
+Now, with the app looking and working as expected, I went back to perfect the generation algorithm, invested the necessary time and energy to make the algorithm backtrack in the most "ideal" fashion, and finally began writing this summary.\
+\
+Sorry if this is long-winded, but I wanted to be as explicit as possible with how I created this project to give you an idea of how I think and where my strengths / weaknesses lie.\
+\
+\
+* "Space" was later changed to "Square" as the debugger was acting strangely, previewing "Space" objects as though they were arrays instead of the nsobject subclass that I had defined, when the name was left as "Space"\
+\
+** I realized the need for a proper union function that was not present in NSIndexSet, so I found a small category that implemented the functions. I acted similarly when looking for array-shuffling functionality.\
+}
