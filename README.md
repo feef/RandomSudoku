@@ -1,0 +1,2 @@
+# RandomSudoku
+A sudoku generator
